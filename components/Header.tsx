@@ -183,7 +183,7 @@ export default function Header() {
     resolvedTheme === "dark"
       ? setPhoneImg(phoneImageDark)
       : setPhoneImg(phoneImage);
-  });
+  }, [resolvedTheme]);
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");

@@ -1,10 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-// Add other necessary imports here
 import { Button } from "@/components/ui/button";
-import Navbar from "../../../components/Navbar";
 import { DatePickerWithPresets } from "./DatePicker";
 // form
 import { useForm, Controller } from "react-hook-form";
@@ -27,41 +23,6 @@ export default function BookingForm() {
     // TODO: call backend API and then redirect to Stripe Checkout
     reset(); // clear form
   };
-
-  const [date, setDate] = useState<Date>();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    appointmentDate: "",
-  });
-
-  useEffect(() => {
-    if (date) {
-      const formattedDate = date.toLocaleDateString();
-      setFormData((prev) => ({ ...prev, appointmentDate: formattedDate }));
-    }
-  }, [date]);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(formData);
-  //   setFormData({
-  //     name: "",
-  //     email: "",
-  //     phone: "",
-  //     appointmentDate: "",
-  //   });
-  //   setDate(undefined);
-  // };
 
   return (
     <div className="relative isolate px-6 pt-14 lg:px-8 ">
@@ -120,7 +81,7 @@ export default function BookingForm() {
             <input
               type="email"
               id="email"
-              name="email"
+              // name="email"
               // value={formData.email}
               // onChange={handleChange}
               // required
@@ -145,7 +106,7 @@ export default function BookingForm() {
             <input
               type="text"
               id="phone"
-              name="phone"
+              // name="phone"
               // value={formData.phone}
               // onChange={handleChange}
               {...register("phone")}

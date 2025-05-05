@@ -64,8 +64,8 @@ function Services() {
             <div
               id={service.id}
               key={i}
-              className="card w-full bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 outline-1 max-w-[344px]"
-              onClick={(e) => {
+              className="card w-full bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 outline-1 max-w-[344px] rounded-2xl"
+              onClick={() => {
                 // Wait for navigation
                 setTimeout(() => {
                   const element = document.getElementById(service.id);

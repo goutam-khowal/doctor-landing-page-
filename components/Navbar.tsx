@@ -28,7 +28,7 @@ function Navbar() {
     resolvedTheme === "dark"
       ? setNavImg(sLetterDarkImg)
       : setNavImg(sLetterImg);
-  });
+  }, [resolvedTheme]);
 
   return (
     <>
