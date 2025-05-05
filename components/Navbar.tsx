@@ -11,7 +11,7 @@ import sLetterDarkImg from "@/assets/images/s-letter-darkTheme.png";
 import { useTheme } from "next-themes";
 
 const navigation = [
-  { name: "Services", href: "#" },
+  { name: "Services", href: "/services" },
   { name: "Testimonials", href: "#testimonials" },
   { name: "Appointments", href: "/booking" },
   { name: "Contact Us", href: "#contact" },

@@ -160,6 +160,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Navbar from "./Navbar";
+import Link from "next/link";
 
 const navigation = [
   { name: "Services", href: "#" },
@@ -243,18 +244,20 @@ export default function Header() {
               and compassionate care for a healthier tomorrow.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="#"
+              <Link
+                href="/booking"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Book Appointment
-              </a>
-              <a
-                href="#"
-                className="text-sm/6 font-semibold text-gray-900 dark:text-gray-100"
-              >
-                Learn more <span aria-hidden="true">→</span>
-              </a>
+              </Link>
+              <Button className="h-full" variant={"ghost"}>
+                <Link
+                  href="#"
+                  className="text-sm/6 font-semibold text-gray-900 dark:text-gray-100"
+                >
+                  Learn more <span aria-hidden="true">→</span>
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -283,7 +286,9 @@ export default function Header() {
         text-white shadow-xs
         md:text-base font-[inter] font-semibold rounded-md hover:bg-indigo-500 hover:scale-[.97] active:bg-[#581eb1] active:scale-[.97] mx-auto transition-all duration-200 absolute bottom-[18%] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
-          Book Appointment
+          <Link className="-m-1.5 p-1.5 cursor-pointer" href="/booking">
+            Book Appointment
+          </Link>
         </button>
       </div>
     </div>
