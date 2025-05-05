@@ -190,7 +190,7 @@ export default function Header() {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 flex flex-col justify-center lg:flex-row items-center border-2 lg:-mt-6 dark:border-gray-700">
+    <div className="bg-white dark:bg-gray-900 flex flex-col justify-center lg:flex-row items-center  lg:-mt-6 dark:border-gray-700">
       <header className="absolute inset-x-0 top-0 z-50">
         <Navbar />
       </header>

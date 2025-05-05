@@ -34,7 +34,7 @@ function Navbar() {
     <>
       <nav
         aria-label="Global"
-        className="flex items-center justify-between p-6 lg:px-8 lg:dark:bg-gray-900 absolute w-full z-50"
+        className="flex items-center justify-between p-6 lg:px-8 dark:bg-gray-900 absolute w-full z-50"
       >
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 cursor-pointer">

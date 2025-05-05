@@ -78,7 +78,7 @@ export default function BookingForm() {
         />
       </div>
 
-      <div className="mx-auto max-w-2xl py-35 lg:py-40 ">
+      <div className="mx-auto max-w-2xl py-14">
         <h2 className="text-4xl font-semibold text-center text-gray-900 dark:text-[#ddd] ">
           Book an Appointment
         </h2>
