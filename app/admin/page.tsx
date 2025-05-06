@@ -2,7 +2,7 @@ import React from "react";
 
 function AdminPage() {
   return (
-    <div>
+    <div className="py-25">
       <h1>Admin Page</h1>
     </div>
   );

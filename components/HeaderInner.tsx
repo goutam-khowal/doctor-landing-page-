@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import BlurBgHOC from "./utils/BlurBgHOC";
+import BlurBgHOC from "../lib/BlurBgHOC";
 // images
 import phoneImage from "@/assets/images/appointment-discount-phone-mockup.png";
 import phoneImageDark from "@/assets/images/appointment-discount-phone-mockup.png";
@@ -102,4 +102,4 @@ const HeaderInnerComp = () => {
   );
 };
 
-export default BlurBgHOC(HeaderInnerComp);
+export default HeaderInnerComp;

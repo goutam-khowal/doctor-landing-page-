@@ -6,7 +6,7 @@ import { DatePickerWithPresets } from "./DatePicker";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { bookingSchema, BookingSchema } from "../schemas/bookingSchema";
-import BlurBgHOC from "@/components/utils/BlurBgHOC";
+import BlurBgHOC from "@/lib/BlurBgHOC";
 
 function BookingForm() {
   const {
@@ -45,9 +45,6 @@ function BookingForm() {
             id="name"
             name="name"
             placeholder="John Doe"
-            // value={formData.name}
-            // onChange={handleChange}
-            // required
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
               "
           />
@@ -68,10 +65,6 @@ function BookingForm() {
           <input
             type="email"
             id="email"
-            // name="email"
-            // value={formData.email}
-            // onChange={handleChange}
-            // required
             {...register("email")}
             placeholder="john@example.com"
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
@@ -93,12 +86,8 @@ function BookingForm() {
           <input
             type="text"
             id="phone"
-            // name="phone"
-            // value={formData.phone}
-            // onChange={handleChange}
             {...register("phone")}
             placeholder="+91 9876543210"
-            // required
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
           />
           {errors.phone && (
@@ -130,7 +119,6 @@ function BookingForm() {
               {errors.appointmentDate.message}
             </p>
           )}
-          {/* <DatePickerWithPresets date={date} setDate={setDate} /> */}
         </div>
 
         <div className="mt-6 flex items-center justify-center">
@@ -147,4 +135,4 @@ function BookingForm() {
   );
 }
 
-export default BlurBgHOC(BookingForm);
+export default BookingForm;

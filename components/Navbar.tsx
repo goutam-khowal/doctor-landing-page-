@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -12,10 +12,10 @@ import { useTheme } from "next-themes";
 
 const navigation = [
   { name: "Services", href: "/services" },
-  { name: "Testimonials", href: "#testimonials" },
+  { name: "Testimonials", href: "/testimonials" },
   { name: "Appointments", href: "/booking" },
-  { name: "Contact Us", href: "#contact" },
-  { name: "About Us", href: "#" },
+  { name: "Contact Us", href: "/contact-us" },
+  { name: "About Us", href: "/about-us" },
   { name: "Admin", href: "/admin" },
 ];
 
@@ -24,6 +24,7 @@ function Navbar() {
   const { theme, resolvedTheme } = useTheme();
   const [navImg, setNavImg] = useState(sLetterImg);
   const [mounted, setMounted] = useState(false);
+  const [isLogoHovered, setIsLogoHovered] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -46,7 +47,29 @@ function Navbar() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 cursor-pointer">
             <span className="sr-only">Your Company</span>
-            <Image alt="S Letter" src={navImg} className="h-8 w-auto" />
+            <Image
+              alt="S Letter"
+              src={navImg}
+              className="h-8 w-auto"
+              onMouseEnter={() => {
+                setIsLogoHovered(true);
+              }}
+              onMouseLeave={() => {
+                setIsLogoHovered(false);
+              }}
+            />
+
+            <span
+              className={`absolute z-50 left-20 top-0 h-full px-10 flex items-center 
+    transition-all duration-300 ease-in-out text-gray-900 dark:text-gray-300 font-semibold italic text-xs
+    ${isLogoHovered ? "opacity-80 translate-x-0" : "opacity-0 -translate-x-5"}
+  `}
+            >
+              <p className="outline-1 shadow-xl bg-white dark:bg-gray-700 px-4 py-2 rounded-2xl ">
+                {" "}
+                &ldquo;Dr.Smriti Negi&rdquo;
+              </p>
+            </span>
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -107,7 +130,12 @@ function Navbar() {
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5 cursor-pointer">
               <span className="sr-only">Your Company</span>
-              <Image alt="S Letter" src={navImg} className="h-8 w-auto" />
+              <Image
+                alt="S Letter"
+                src={navImg}
+                className="h-8 w-auto"
+                title={`“Dr.Smriti Negi”`}
+              />
             </Link>
 
             <button
