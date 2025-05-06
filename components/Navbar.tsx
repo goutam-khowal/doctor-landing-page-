@@ -51,11 +51,15 @@ function Navbar() {
               alt="S Letter"
               src={navImg}
               className="h-8 w-auto"
-              onMouseEnter={() => {
-                setIsLogoHovered(true);
+              onPointerEnter={(e) => {
+                if (e.pointerType === "mouse") {
+                  setIsLogoHovered(true);
+                }
               }}
-              onMouseLeave={() => {
-                setIsLogoHovered(false);
+              onPointerLeave={(e) => {
+                if (e.pointerType === "mouse") {
+                  setIsLogoHovered(false);
+                }
               }}
             />
 
