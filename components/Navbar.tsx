@@ -99,11 +99,10 @@ function Navbar() {
       >
         <div className="fixed inset-0 z-50" />
         <DialogPanel
-          className={`fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 ${
-            theme === "dark"
-              ? "bg-gray-900 text-slate-500"
-              : "bg-white text-gray-900"
-          }`}
+          className={`fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10
+            dark:bg-gray-900 dark:text-slate-500
+            bg-white text-gray-900
+            `}
         >
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5 cursor-pointer">
@@ -114,9 +113,10 @@ function Navbar() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className={`-m-2.5 rounded-md p-2.5 ${
-                theme === "dark" ? "text-slate-300" : "text-gray-700"
-              }`}
+              className={`-m-2.5 rounded-md p-2.5 
+               dark:bg-gray-900 dark:text-slate-500
+            bg-white text-gray-900  
+              `}
             >
               <span className="sr-only">Close menu</span>
               <XMarkIcon aria-hidden="true" className="size-6 cursor-pointer" />
@@ -130,11 +130,8 @@ function Navbar() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold transition-all duration-200 ${
-                      theme === "dark"
-                        ? "text-slate-500 hover:opacity-90"
-                        : "text-gray-900 hover:bg-gray-50 cursor-pointer"
-                    }`}
+                    className={`-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold transition-all duration-200  dark:bg-gray-900 dark:text-slate-500
+            bg-white text-gray-900 `}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -144,11 +141,10 @@ function Navbar() {
               <div className="py-6">
                 <a
                   href="#"
-                  className={`-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold transition-all duration-200 ${
-                    theme === "dark"
-                      ? "text-slate-500 hover:opacity-90"
-                      : "text-gray-900 hover:bg-gray-50"
-                  }`}
+                  className={`-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold transition-all duration-200 
+                   
+                       dark:bg-gray-900 dark:text-slate-500
+            bg-white text-gray-900`}
                 >
                   Log in
                 </a>
