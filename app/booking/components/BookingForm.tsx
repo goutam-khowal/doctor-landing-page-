@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { DatePickerWithPresets } from "./DatePicker";
-// form
+// form control
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { bookingSchema, BookingSchema } from "../schemas/bookingSchema";
