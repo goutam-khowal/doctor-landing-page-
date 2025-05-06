@@ -27,8 +27,8 @@ function BookingForm() {
 
   return (
     <div className="mx-auto max-w-2xl py-14 px-8">
-      <h2 className="text-4xl font-semibold text-center text-gray-900 dark:text-[#ddd] ">
-        Book an Appointment
+      <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 dark:text-[#ddd] text-center">
+        Book an <span className="text-indigo-600">Appointment</span>
       </h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6">
