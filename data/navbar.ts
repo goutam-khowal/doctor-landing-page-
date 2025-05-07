@@ -28,7 +28,7 @@ export const navigationItems: CNavigationItems = [
 ];
 
 export const navbarText: CNavbarText = {
-  companyName: "Your Company",
+  companyName: "Zen Veda",
   doctorName: "Dr. Smriti Negi",
   login: {
     text: "Log in",

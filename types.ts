@@ -1,5 +1,6 @@
 import type { StaticImageData } from "next/image";
 
+// * Site Info -
 interface CNavigationItem {
   name: string;
   href: string;
