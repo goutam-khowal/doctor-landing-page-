@@ -15,3 +15,32 @@ export interface CNavbarText {
   openMenu: string;
   closeMenu: string;
 }
+
+//* Header *
+export interface CHeaderText {
+  announcement: {
+    text: string;
+    link: {
+      text: string;
+      href: string;
+    };
+  };
+  title: {
+    prefix: string;
+    highlight: string;
+  };
+  description: string;
+  cta: {
+    primary: {
+      text: string;
+      href: string;
+    };
+    secondary: {
+      text: string;
+      href: string;
+    };
+  };
+  phoneImage: {
+    alt: string;
+  };
+}
