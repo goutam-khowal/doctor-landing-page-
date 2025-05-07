@@ -9,15 +9,7 @@ import Image from "next/image";
 import sLetterImg from "@/assets/images/s-letter.png";
 import sLetterDarkImg from "@/assets/images/s-letter-darkTheme.png";
 import { useTheme } from "next-themes";
-
-const navigation = [
-  { name: "Services", href: "/services" },
-  { name: "Testimonials", href: "/testimonials" },
-  { name: "Appointments", href: "/booking" },
-  { name: "Contact Us", href: "/contact-us" },
-  { name: "About Us", href: "/about-us" },
-  { name: "Admin", href: "/admin" },
-];
+import { navbarText, navigationItems } from "@/data/navbar";
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,9 +23,13 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    resolvedTheme === "dark"
-      ? setNavImg(sLetterDarkImg)
-      : setNavImg(sLetterImg);
+    if (resolvedTheme) {
+      if (resolvedTheme === "dark") {
+        setNavImg(sLetterDarkImg);
+      } else {
+        setNavImg(sLetterImg);
+      }
+    }
   }, [resolvedTheme]);
 
   if (!mounted) return null;
@@ -45,7 +41,10 @@ function Navbar() {
         className="flex items-center justify-between p-6 lg:px-8 dark:bg-gray-900 absolute w-full z-50"
       >
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5 cursor-pointer">
+          <Link
+            href={navigationItems[0].href}
+            className="-m-1.5 p-1.5 cursor-pointer"
+          >
             <span className="sr-only">Your Company</span>
             <Image
               alt="S Letter"
@@ -71,7 +70,7 @@ function Navbar() {
             >
               <p className="outline-1 shadow-xl bg-white dark:bg-gray-700 px-4 py-2 rounded-2xl ">
                 {" "}
-                &ldquo;Dr.Smriti Negi&rdquo;
+                &ldquo;{navbarText.doctorName}&rdquo;
               </p>
             </span>
           </Link>
@@ -82,12 +81,12 @@ function Navbar() {
             onClick={() => setMobileMenuOpen(true)}
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
           >
-            <span className="sr-only">Open main menu</span>
+            <span className="sr-only">{navbarText.openMenu}</span>
             <Bars3Icon aria-hidden="true" className="size-6 cursor-pointer" />
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12  lg:items-center ">
-          {navigation.map((item) => (
+          {navigationItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
@@ -106,7 +105,7 @@ function Navbar() {
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
-            href="#"
+            href={navbarText.login.href}
             className="text-sm/6 font-semibold text-gray-900  lg:dark:text-slate-500
               lg:dark:hover:opacity-[.9]
               hover:text-gray-500
@@ -115,7 +114,8 @@ function Navbar() {
               duration-200 cursor-pointer
           "
           >
-            Log in <span aria-hidden="true">&rarr;</span>
+            {navbarText.login.text}
+            <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
       </nav>
@@ -133,12 +133,12 @@ function Navbar() {
         >
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5 cursor-pointer">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">{navbarText.companyName}</span>
               <Image
                 alt="S Letter"
                 src={navImg}
                 className="h-8 w-auto"
-                title={`“Dr.Smriti Negi”`}
+                title={navbarText.doctorName}
               />
             </Link>
 
@@ -150,7 +150,7 @@ function Navbar() {
             bg-white text-gray-900  
               `}
             >
-              <span className="sr-only">Close menu</span>
+              <span className="sr-only">{navbarText.closeMenu}</span>
               <XMarkIcon aria-hidden="true" className="size-6 cursor-pointer" />
             </button>
           </div>
@@ -158,7 +158,7 @@ function Navbar() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                {navigation.map((item) => (
+                {navigationItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}

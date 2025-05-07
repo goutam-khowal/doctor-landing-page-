@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import BlurBgHOC from "../lib/BlurBgHOC";
+
 // images
 import phoneImage from "@/assets/images/appointment-discount-phone-mockup.png";
 import phoneImageDark from "@/assets/images/appointment-discount-phone-mockup.png";
@@ -57,7 +57,7 @@ const HeaderInnerComp = () => {
           </div>
           <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-900 dark:text-gray-100 sm:text-7xl">
             Personalized Care with{" "}
-            <span className="text-indigo-600">Dr. SN</span>
+            <span className="text-indigo-600">Dr. Smriti Negi</span>
           </h1>
           <p className="mt-8 text-lg font-medium text-pretty text-gray-500 dark:text-gray-300 sm:text-xl/8">
             Your health, our priority — offering trusted medical consultations
