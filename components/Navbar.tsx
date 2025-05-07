@@ -41,10 +41,7 @@ function Navbar() {
         className="flex items-center justify-between p-6 lg:px-8 dark:bg-gray-900 absolute w-full z-50"
       >
         <div className="flex lg:flex-1">
-          <Link
-            href={navigationItems[0].href}
-            className="-m-1.5 p-1.5 cursor-pointer"
-          >
+          <Link href="/" className="-m-1.5 p-1.5 cursor-pointer">
             <span className="sr-only">Your Company</span>
             <Image
               alt="S Letter"

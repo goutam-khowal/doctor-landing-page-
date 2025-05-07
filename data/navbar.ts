@@ -1,11 +1,6 @@
 import { CNavbarText, CNavigationItems } from "@/types";
 
-const home = {
-  name: "Home",
-  href: "/",
-};
 export const navigationItems: CNavigationItems = [
-  home,
   {
     name: "Services",
     href: "/services",
