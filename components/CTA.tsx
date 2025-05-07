@@ -46,7 +46,7 @@ function CTA() {
             onSubmit={handleSubmit(onSubmit)}
             className="sm:flex sm:gap-4 border-2"
           >
-            <div className="sm:flex-1 relative">
+            <div className="sm:flex-1">
               <label htmlFor="email" className="sr-only">
                 {headerText.cta.form?.placeholder}
               </label>
@@ -55,10 +55,10 @@ function CTA() {
                 {...register("email")}
                 type="email"
                 placeholder={headerText.cta.form?.placeholder}
-                className="w-full rounded-md border-gray-200 bg-white p-3 shadow-xs transition focus:border-white focus:ring-3 focus:ring-indigo-400 focus:outline-hidden dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                className="w-full rounded-md border-gray-200 bg-white p-3 shadow-xs transition focus:border-white focus:ring-3 focus:ring-indigo-400 focus:outline-hidden dark:border-gray-700 dark:bg-gray-800 dark:text-white h-12"
               />
               {errors.email && (
-                <p className="mt-1 text-sm text-red-500 dark:text-yellow-600 absolute">
+                <p className="mt-1 text-sm text-red-500 dark:text-yellow-600 ">
                   {errors.email.message}
                 </p>
               )}
@@ -66,7 +66,7 @@ function CTA() {
 
             <button
               type="submit"
-              className="group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-indigo-600 px-5 py-3 text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:mt-0 sm:w-auto "
+              className="group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-indigo-600 px-5 py-3 text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:mt-0 sm:w-auto h-12"
             >
               <span className="text-sm font-medium">
                 {headerText.cta.form?.submit.label} &rarr;
