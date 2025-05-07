@@ -1,3 +1,5 @@
+import type { StaticImageData } from "next/image";
+
 interface CNavigationItem {
   name: string;
   href: string;
@@ -41,6 +43,10 @@ export interface CHeaderText {
     };
   };
   phoneImage: {
+    src: {
+      dark: StaticImageData;
+      light: StaticImageData;
+    };
     alt: string;
   };
 }
