@@ -34,7 +34,7 @@ export const navigationItems: CNavigationItems = [
 
 export const navbarText: CNavbarText = {
   companyName: "Your Company",
-  doctorName: "Dr.Smriti Negi",
+  doctorName: "Dr. Smriti Negi",
   login: {
     text: "Log in",
     href: "#",

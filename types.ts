@@ -50,3 +50,12 @@ export interface CHeaderText {
     alt: string;
   };
 }
+
+//* Services *
+export interface Service {
+  id: string;
+  service: string;
+  image: StaticImageData;
+  description: string;
+  href: string;
+}
