@@ -6,7 +6,7 @@ import { DatePickerWithPresets } from "./DatePicker";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { bookingSchema, BookingSchema } from "../schemas/bookingSchema";
-import BlurBgHOC from "@/lib/BlurBgHOC";
+import { bookingFormText } from "@/data/booking";
 
 function BookingForm() {
   const {
@@ -28,7 +28,10 @@ function BookingForm() {
   return (
     <div className="mx-auto max-w-2xl py-14 px-8">
       <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 dark:text-[#ddd] text-center">
-        Book an <span className="text-indigo-600">Appointment</span>
+        {bookingFormText.title.text + " "}
+        <span className="text-indigo-600">
+          {bookingFormText.title.highlight}
+        </span>
       </h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6">
@@ -37,14 +40,14 @@ function BookingForm() {
             htmlFor="name"
             className="block text-sm font-medium text-gray-900 dark:text-slate-400"
           >
-            Full Name
+            {bookingFormText.form.name.label}
           </label>
           <input
             {...register("name")}
             type="text"
             id="name"
             name="name"
-            placeholder="John Doe"
+            placeholder={bookingFormText.form.name.placeholder}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500
               "
           />
@@ -60,13 +63,13 @@ function BookingForm() {
             htmlFor="email"
             className="block text-sm font-medium text-gray-900 dark:text-slate-400"
           >
-            Email Address
+            {bookingFormText.form.email.label}
           </label>
           <input
             type="email"
             id="email"
             {...register("email")}
-            placeholder="john@example.com"
+            placeholder={bookingFormText.form.email.placeholder}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
           />
           {errors.email && (
@@ -81,13 +84,13 @@ function BookingForm() {
             htmlFor="phone"
             className="block text-sm font-medium text-gray-900 dark:text-slate-400"
           >
-            Phone Number
+            {bookingFormText.form.phone.label}
           </label>
           <input
             type="text"
             id="phone"
             {...register("phone")}
-            placeholder="+91 9876543210"
+            placeholder={bookingFormText.form.phone.placeholder}
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
           />
           {errors.phone && (
@@ -102,7 +105,7 @@ function BookingForm() {
             htmlFor="appointmentDate"
             className="block text-sm font-medium text-gray-900 dark:text-slate-400"
           >
-            Appointment Date
+            {bookingFormText.form.appointmentDate.label}
           </label>
           <Controller
             name="appointmentDate"
@@ -127,7 +130,7 @@ function BookingForm() {
             variant="default"
             className="w-full py-2 px-4 bg-indigo-600 text-white rounded-md hover:bg-indigo-500 focus:ring-2 focus:ring-indigo-600"
           >
-            Book Appointment
+            {bookingFormText.form.submit.text}
           </Button>
         </div>
       </form>

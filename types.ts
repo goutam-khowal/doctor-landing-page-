@@ -59,3 +59,32 @@ export interface Service {
   description: string;
   href: string;
 }
+
+// * Booking Form
+
+export interface CBookingFormText {
+  title: {
+    text: string;
+    highlight: string;
+  };
+  form: {
+    name: {
+      label: string;
+      placeholder: string;
+    };
+    email: {
+      label: string;
+      placeholder: string;
+    };
+    phone: {
+      label: string;
+      placeholder: string;
+    };
+    appointmentDate: {
+      label: string;
+    };
+    submit: {
+      text: string;
+    };
+  };
+}
