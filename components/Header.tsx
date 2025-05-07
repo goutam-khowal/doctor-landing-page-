@@ -1,9 +1,15 @@
 "use client";
 
+import CTA from "@/components/CTA";
 import HeaderInner from "./HeaderInner";
 
 function Header() {
-  return <HeaderInner />;
+  return (
+    <>
+      <HeaderInner />
+      <CTA />
+    </>
+  );
 }
 
 export default Header;

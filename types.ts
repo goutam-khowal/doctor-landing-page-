@@ -18,7 +18,7 @@ export interface CNavbarText {
   closeMenu: string;
 }
 
-//* Header *
+//* Header - CTA *
 export interface CHeaderText {
   announcement: {
     text: string;
@@ -40,6 +40,18 @@ export interface CHeaderText {
     secondary: {
       text: string;
       href: string;
+    };
+    form?: {
+      title: {
+        prefix: string;
+        highlight: string;
+      };
+      description: string;
+      placeholder: string;
+      submit: {
+        label: string;
+        href: string;
+      };
     };
   };
   phoneImage: {
@@ -84,6 +96,35 @@ export interface CBookingFormText {
       label: string;
     };
     submit: {
+      text: string;
+    };
+  };
+}
+
+// * Contact us
+
+export interface CContactFormText {
+  title: {
+    text: string;
+    highlight: string;
+  };
+  form: {
+    name: {
+      label: string;
+      placeholder: string;
+    };
+    email: {
+      label: string;
+      placeholder: string;
+    };
+    phone: {
+      label: string;
+      placeholder: string;
+    };
+    submit: {
+      text: string;
+    };
+    message: {
       text: string;
     };
   };

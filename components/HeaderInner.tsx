@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { headerText } from "@/data/header";
+import { headerText } from "@/data/cta";
 
 const HeaderInnerComp = () => {
   const { theme, setTheme, resolvedTheme } = useTheme();

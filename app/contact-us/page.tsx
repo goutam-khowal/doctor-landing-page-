@@ -1,11 +1,13 @@
 import BlurBgHOC from "@/lib/BlurBgHOC";
 import React from "react";
+import CTA from "../../components/CTA";
+import ContactForm from "./components/ContactForm";
 
 function ContactUsPage() {
   return (
-    <div className="py-25">
-      We will soon share our contacts , social links... here....soon
-    </div>
+    <>
+      <ContactForm />
+    </>
   );
 }
 

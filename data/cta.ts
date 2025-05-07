@@ -25,6 +25,19 @@ export const headerText: CHeaderText = {
       text: "Learn more",
       href: "#",
     },
+    form: {
+      title: {
+        prefix: "Join our ",
+        highlight: "Health-Conscious Community",
+      },
+      description:
+        "Be a part of a growing network of trusted doctors and proactive patients. Share experiences, gain insights, and support each other on the path to better health.",
+      placeholder: "Enter your email to join the community",
+      submit: {
+        label: "Join Now",
+        href: "#",
+      },
+    },
   },
   phoneImage: {
     src: {
