@@ -10,6 +10,7 @@ import sLetterImg from "@/assets/images/s-letter.png";
 import sLetterDarkImg from "@/assets/images/s-letter-darkTheme.png";
 import { useTheme } from "next-themes";
 import { navbarText, navigationItems } from "@/data/navbar";
+import { usePathname } from "next/navigation";
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,6 +35,7 @@ function Navbar() {
 
   if (!mounted) return null;
 
+  const pathName = usePathname();
   return (
     <>
       <nav
@@ -87,13 +89,17 @@ function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm/6 font-semibold text-gray-900  lg:dark:text-slate-500
+              className={`text-sm/6 font-semibold text-gray-900  lg:dark:text-slate-500
               lg:dark:hover:opacity-[.9]
               hover:text-gray-500
-
               transition-all
-              duration-200 cursor-pointer
-              "
+              duration-200 cursor-pointer ${
+                pathName === item.href
+                  ? "!text-indigo-600 dark:!text-indigo-300"
+                  : ""
+              }
+
+              `}
             >
               {item.name}
             </Link>
@@ -160,7 +166,12 @@ function Navbar() {
                     key={item.name}
                     href={item.href}
                     className={`-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold transition-all duration-200  dark:bg-gray-900 dark:text-slate-500
-            bg-white text-gray-900 `}
+            bg-white text-gray-900 ${
+              pathName === item.href
+                ? "!text-indigo-600 dark:!text-indigo-300"
+                : ""
+            }
+`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
