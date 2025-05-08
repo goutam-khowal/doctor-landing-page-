@@ -1,0 +1,9 @@
+{
+  "schema": "./lib/db/schema.ts",
+  "out": "./drizzle",
+  "driver": "postgres",
+  "dialect": "postgresql",
+  "dbCredentials": {
+    "connectionString": "postgresql://postgres:your_password@localhost:5432/doctor_db"
+  }
+}

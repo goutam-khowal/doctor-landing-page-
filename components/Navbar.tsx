@@ -13,6 +13,7 @@ import { navbarText, navigationItems } from "@/data/navbar";
 import { usePathname } from "next/navigation";
 
 function Navbar() {
+  const pathName = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, resolvedTheme } = useTheme();
   const [navImg, setNavImg] = useState(sLetterImg);
@@ -35,7 +36,6 @@ function Navbar() {
 
   if (!mounted) return null;
 
-  const pathName = usePathname();
   return (
     <>
       <nav

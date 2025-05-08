@@ -17,9 +17,26 @@ function ContactForm() {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log("Submitted data: ", data);
-    // TODO: Implement form submission logic
+  const onSubmit = async (data: ContactFormData) => {
+    console.log("Contact Us Data:", data);
+
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fullname: data.fullname, // Ensure data is in the correct format
+        email: data.email,
+        mobile: data.mobile,
+        message: data.message,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to submit");
+    }
+
     reset();
   };
 
