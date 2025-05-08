@@ -19,9 +19,26 @@ function BookingForm() {
     resolver: zodResolver(bookingSchema),
   });
 
-  const onSubmit = (data: BookingSchema) => {
+  const onSubmit = async (data: BookingSchema) => {
     console.log("Submitted data: ", data);
     // TODO: call backend API and then redirect to Stripe Checkout
+
+    const response = await fetch("/api/bookings", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: data.name, // Ensure data is in the correct format
+        email: data.email,
+        phone: data.phone,
+        appointmentDate: data.appointmentDate,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to submit");
+    }
     reset(); // clear form
   };
 
